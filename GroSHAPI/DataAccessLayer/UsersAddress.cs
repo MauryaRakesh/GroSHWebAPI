@@ -14,23 +14,18 @@ namespace DataAccessLayer
     
     public partial class UsersAddress
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UsersAddress()
-        {
-            this.UsersAddress1 = new HashSet<UsersAddress>();
-        }
-    
         public int id { get; set; }
+        public Nullable<int> userid { get; set; }
         public string addressLine { get; set; }
         public string city { get; set; }
         public string state { get; set; }
         public string country { get; set; }
         public string zipcode { get; set; }
-        public Nullable<int> user_id { get; set; }
-        public System.DateTime createdDate { get; set; }
+        public string lat { get; set; }
+        public string @long { get; set; }
+        public System.DateTime createDate { get; set; }
+        public System.DateTime modifiedDate { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsersAddress> UsersAddress1 { get; set; }
-        public virtual UsersAddress UsersAddress2 { get; set; }
+        public virtual UsersInfo UsersInfo { get; set; }
     }
 }

@@ -29,22 +29,22 @@ namespace GroSHAPI.App_Start
 			if (user.IsValid)
 			{
 				var identity = new ClaimsIdentity( context.Options.AuthenticationType);
-				identity.AddClaim(new Claim(Utility.Util.UserName, context.UserName));
-				identity.AddClaim(new Claim(Utility.Util.Password, context.Password));
+				identity.AddClaim(new Claim(Utility.Constants.UserName, context.UserName));
+				identity.AddClaim(new Claim(Utility.Constants.Password, context.Password));
 				var props = new AuthenticationProperties(new Dictionary<string, string>
 				{
-					{ Utility.Util.FirstName, user.FirstName },
-					{ Utility.Util.LastName, user.LastName },
-					{ Utility.Util.Email, user.Email },
-					{ Utility.Util.Phone, user.Phone},
-					{ Utility.Util.UserId, user.UserId }
+					{ Utility.Constants.FirstName, user.FirstName },
+					{ Utility.Constants.LastName, user.LastName },
+					{ Utility.Constants.Email, user.Email },
+					{ Utility.Constants.Phone, user.Phone},
+					{ Utility.Constants.UserId, user.UserId }
 				});
 				var ticket = new AuthenticationTicket(identity, props);
 				context.Validated(ticket);
 			}
 			else
 			{
-				context.SetError(Utility.Util.GrantType, Utility.Util.InvalidLogin);
+				context.SetError(Utility.Constants.GrantType, Utility.Constants.InvalidLogin);
 				return;
 			}
 		}

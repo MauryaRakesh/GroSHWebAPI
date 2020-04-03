@@ -14,6 +14,14 @@ namespace DataAccessLayer
     
     public partial class UsersInfo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UsersInfo()
+        {
+            this.GrocsharyItems = new HashSet<GrocsharyItem>();
+            this.SendReceiveRequests = new HashSet<SendReceiveRequest>();
+            this.UsersAddresses = new HashSet<UsersAddress>();
+        }
+    
         public int id { get; set; }
         public string first_Name { get; set; }
         public string last_Name { get; set; }
@@ -21,5 +29,13 @@ namespace DataAccessLayer
         public string phone { get; set; }
         public string password { get; set; }
         public System.DateTime createdDate { get; set; }
+        public System.DateTime modifiedDate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GrocsharyItem> GrocsharyItems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SendReceiveRequest> SendReceiveRequests { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UsersAddress> UsersAddresses { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace DataAccessLayer
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class GroSHDBEntities : DbContext
     {
@@ -25,7 +27,62 @@ namespace DataAccessLayer
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<GrocsharyItem> GrocsharyItems { get; set; }
+        public virtual DbSet<SendReceiveRequest> SendReceiveRequests { get; set; }
         public virtual DbSet<UsersAddress> UsersAddresses { get; set; }
         public virtual DbSet<UsersInfo> UsersInfoes { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> AddNewUser(string firstName, string lastName, string email, string phone, string password, string addressLine, string city, string state, string country, string zipcode, string lat, string lon, ObjectParameter result)
+        {
+            var firstNameParameter = firstName != null ?
+                new ObjectParameter("firstName", firstName) :
+                new ObjectParameter("firstName", typeof(string));
+    
+            var lastNameParameter = lastName != null ?
+                new ObjectParameter("lastName", lastName) :
+                new ObjectParameter("lastName", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var addressLineParameter = addressLine != null ?
+                new ObjectParameter("addressLine", addressLine) :
+                new ObjectParameter("addressLine", typeof(string));
+    
+            var cityParameter = city != null ?
+                new ObjectParameter("city", city) :
+                new ObjectParameter("city", typeof(string));
+    
+            var stateParameter = state != null ?
+                new ObjectParameter("state", state) :
+                new ObjectParameter("state", typeof(string));
+    
+            var countryParameter = country != null ?
+                new ObjectParameter("country", country) :
+                new ObjectParameter("country", typeof(string));
+    
+            var zipcodeParameter = zipcode != null ?
+                new ObjectParameter("zipcode", zipcode) :
+                new ObjectParameter("zipcode", typeof(string));
+    
+            var latParameter = lat != null ?
+                new ObjectParameter("lat", lat) :
+                new ObjectParameter("lat", typeof(string));
+    
+            var lonParameter = lon != null ?
+                new ObjectParameter("lon", lon) :
+                new ObjectParameter("lon", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("AddNewUser", firstNameParameter, lastNameParameter, emailParameter, phoneParameter, passwordParameter, addressLineParameter, cityParameter, stateParameter, countryParameter, zipcodeParameter, latParameter, lonParameter, result);
+        }
     }
 }

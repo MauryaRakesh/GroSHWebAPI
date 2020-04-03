@@ -5,9 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f19b3368bce64c8db9a1ef63684d68c1" Name="Diagram1">
-        <EntityTypeShape EntityType="GroSHDBModel.UsersAddress" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GroSHDBModel.UsersInfo" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="GroSHDBModel.FK__UsersAddr__user___1367E606" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GroSHDBModel.GrocsharyItem" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="GroSHDBModel.SendReceiveRequest" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="GroSHDBModel.UsersAddress" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="GroSHDBModel.UsersInfo" Width="1.5" PointX="0.75" PointY="4.875" />
+        <AssociationConnector Association="GroSHDBModel.FK__Grocshary__user___36B12243" />
+        <AssociationConnector Association="GroSHDBModel.FK__SendRecei__sentF__3B75D760" />
+        <AssociationConnector Association="GroSHDBModel.FK_UsersAddress_UsersInfo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

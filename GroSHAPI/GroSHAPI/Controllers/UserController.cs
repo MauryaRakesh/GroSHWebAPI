@@ -24,13 +24,25 @@ namespace GroSHAPI.Controllers
 		{
 			Response<int> response = new Response<int>();
 			if (userDetails != null)
-			{
+			{				
 				var result = this._userBusinessLayer.UserRegistration(userDetails);
-				if (result == 1)
+				if (result >= 1)
 				{
 					response.SatusCode = 200;
 					response.Data = result;
-					response.Message = Utility.Util.SuccessMesg;
+					response.Message = Utility.Constants.SuccessMesg;
+				}
+				if(result==-1)
+				{
+					response.SatusCode = 201;
+					response.Data = result;
+					response.Message = Utility.Constants.UserAlreadyExist;
+				}
+				else
+				{
+					response.SatusCode = 200;
+					response.Data = result;
+					response.Message = Utility.Constants.FailedMesg;
 				}
 			}
 			return Request.CreateResponse(response);// Ok(response);
