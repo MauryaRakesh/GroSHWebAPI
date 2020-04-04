@@ -10,6 +10,7 @@
             <PropertyRef Name="itemId" />
           </Key>
           <Property Name="itemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
           <Property Name="itemDescription" Type="nvarchar" MaxLength="500" />
           <Property Name="exchangeItem" Type="nvarchar" MaxLength="500" />
           <Property Name="user_id" Type="int" />
@@ -180,6 +181,7 @@
           <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="UsersInfo" Relationship="GroSHDBModel.FK__Grocshary__user___36B12243" FromRole="GrocsharyItem" ToRole="UsersInfo" />
+          <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SendReceiveRequest">
           <Key>
@@ -272,6 +274,7 @@
           <EntitySetMapping Name="GrocsharyItems">
             <EntityTypeMapping TypeName="GroSHDBModel.GrocsharyItem">
               <MappingFragment StoreEntitySet="GrocsharyItem">
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
                 <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
                 <ScalarProperty Name="createdDate" ColumnName="createdDate" />
                 <ScalarProperty Name="lon" ColumnName="lon" />

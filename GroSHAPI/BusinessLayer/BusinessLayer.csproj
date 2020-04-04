@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GrocSHItemBusinessLayer.cs" />
+    <Compile Include="IGrocSHItemBusinessLayer.cs" />
     <Compile Include="IUserBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBusinessLayer.cs" />

@@ -1,0 +1,12 @@
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\DTO.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\DTO.pdb
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

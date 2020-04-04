@@ -18,6 +18,7 @@ namespace Utility
 		public const string Phone = "phone";
 		public const string UserId = "userId";
 		public const string SuccessMesg = "Record Inserted Successfully.";
+		public const string UpdateMesg = "Record Updated Successfully.";
 		public const string UserAlreadyExist = "User already exist.";
 		public const string FailedMesg = "Something went wrong please try again.";
 		public const string EncryptKey = "XYZ25855354";

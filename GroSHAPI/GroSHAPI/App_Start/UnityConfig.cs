@@ -15,6 +15,7 @@ namespace GroSHAPI
             // it is NOT necessary to register your controllers
             
             container.RegisterType<IUserBusinessLayer, UserBusinessLayer>();
+			container.RegisterType<IGrocSHItemBusinessLayer, GrocSHItemBusinessLayer>();
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

@@ -61,7 +61,7 @@ namespace DataAccessLayer
 				{
 					var outputParameter = new ObjectParameter("result", typeof(int));
 					var result = db.AddNewUser(userDetail.FirstName, userDetail.LastName, userDetail.Email, userDetail.Phone, Helpers.Util.Encrypt(userDetail.Password),
-							userDetail.AddressLine, userDetail.City, userDetail.State, userDetail.Country, userDetail.Zipcode, "1", "1", outputParameter);
+							userDetail.AddressLine, userDetail.City, userDetail.State, userDetail.Country, userDetail.Zipcode, userDetail.Lat, userDetail.Lon, outputParameter);
 					result.ToList();
 					flag = (int)outputParameter.Value;
 				}

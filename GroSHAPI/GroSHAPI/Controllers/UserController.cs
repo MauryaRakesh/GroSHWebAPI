@@ -32,7 +32,7 @@ namespace GroSHAPI.Controllers
 					response.Data = result;
 					response.Message = Utility.Constants.SuccessMesg;
 				}
-				if(result==-1)
+				else if(result==-1)
 				{
 					response.SatusCode = 201;
 					response.Data = result;
@@ -40,7 +40,7 @@ namespace GroSHAPI.Controllers
 				}
 				else
 				{
-					response.SatusCode = 200;
+					response.SatusCode = 500;
 					response.Data = result;
 					response.Message = Utility.Constants.FailedMesg;
 				}

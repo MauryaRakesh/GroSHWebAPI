@@ -54,6 +54,7 @@
     <Compile Include="GrocsharyItem.cs">
       <DependentUpon>GroSHDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GrocSHItemDataAccess.cs" />
     <Compile Include="GroSHDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,6 +71,7 @@
       <DependentUpon>GroSHDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Util.cs" />
+    <Compile Include="IGrocSHItemDataAccess.cs" />
     <Compile Include="IUserDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendReceiveRequest.cs">

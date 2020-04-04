@@ -23,6 +23,7 @@ namespace DataAccessLayer
         public string lon { get; set; }
         public System.DateTime createdDate { get; set; }
         public System.DateTime modifiedDate { get; set; }
+        public string ItemName { get; set; }
     
         public virtual UsersInfo UsersInfo { get; set; }
     }

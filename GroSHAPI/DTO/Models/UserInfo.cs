@@ -28,5 +28,7 @@ namespace DTO.Models
 		public string State { get; set; }
 		public string Country { get; set; }
 		public string Zipcode { get; set; }
+		public string Lat { get; set; }
+		public string Lon { get; set; }
 	}
 }
