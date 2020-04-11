@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GroSHDBModelStoreContainer" CdmEntityContainer="GroSHDBEntities">
+    <EntitySetMapping Name="GrocsharyItems">
+      <EntityTypeMapping TypeName="GroSHDBModel.GrocsharyItem">
+        <MappingFragment StoreEntitySet="GrocsharyItem">
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="imageName" ColumnName="imageName" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="exchangeItem" ColumnName="exchangeItem" />
+          <ScalarProperty Name="itemDescription" ColumnName="itemDescription" />
+          <ScalarProperty Name="itemId" ColumnName="itemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SendReceiveRequests">
+      <EntityTypeMapping TypeName="GroSHDBModel.SendReceiveRequest">
+        <MappingFragment StoreEntitySet="SendReceiveRequest">
+          <ScalarProperty Name="acceptedDate" ColumnName="acceptedDate" />
+          <ScalarProperty Name="receivedDate" ColumnName="receivedDate" />
+          <ScalarProperty Name="sentDate" ColumnName="sentDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="senTo" ColumnName="senTo" />
+          <ScalarProperty Name="sentFrom" ColumnName="sentFrom" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersAddresses">
+      <EntityTypeMapping TypeName="GroSHDBModel.UsersAddress">
+        <MappingFragment StoreEntitySet="UsersAddress">
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="long" ColumnName="long" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="addressLine" ColumnName="addressLine" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersInfoes">
+      <EntityTypeMapping TypeName="GroSHDBModel.UsersInfo">
+        <MappingFragment StoreEntitySet="UsersInfo">
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="last_Name" ColumnName="last_Name" />
+          <ScalarProperty Name="first_Name" ColumnName="first_Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddNewUser" FunctionName="GroSHDBModel.Store.AddNewUser" />
+  </EntityContainerMapping>
+</Mapping>

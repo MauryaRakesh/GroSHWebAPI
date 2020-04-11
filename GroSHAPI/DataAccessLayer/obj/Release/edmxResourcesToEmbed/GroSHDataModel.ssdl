@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GroSHDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GrocsharyItem">
+    <Key>
+      <PropertyRef Name="itemId" />
+    </Key>
+    <Property Name="itemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="itemDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="exchangeItem" Type="nvarchar" MaxLength="500" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="imageName" Type="nvarchar" MaxLength="100" />
+    <Property Name="lat" Type="nvarchar" MaxLength="50" />
+    <Property Name="lon" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SendReceiveRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sentFrom" Type="int" />
+    <Property Name="senTo" Type="int" />
+    <Property Name="status" Type="binary" MaxLength="1" />
+    <Property Name="sentDate" Type="datetime" />
+    <Property Name="receivedDate" Type="datetime" />
+    <Property Name="acceptedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UsersAddress">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" />
+    <Property Name="addressLine" Type="nvarchar" MaxLength="500" />
+    <Property Name="city" Type="nvarchar" MaxLength="200" />
+    <Property Name="state" Type="nvarchar" MaxLength="200" />
+    <Property Name="country" Type="nvarchar" MaxLength="200" />
+    <Property Name="zipcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="lat" Type="nvarchar" MaxLength="50" />
+    <Property Name="long" Type="nvarchar" MaxLength="50" />
+    <Property Name="createDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="last_Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="password" Type="nvarchar" MaxLength="500" />
+    <Property Name="createdDate" Type="datetime" Nullable="false" />
+    <Property Name="modifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Grocshary__user___36B12243">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="0..1" />
+    <End Role="GrocsharyItem" Type="Self.GrocsharyItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GrocsharyItem">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SendRecei__sentF__5EBF139D">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="0..1" />
+    <End Role="SendReceiveRequest" Type="Self.SendReceiveRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SendReceiveRequest">
+        <PropertyRef Name="sentFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SendRecei__sentF__656C112C">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="0..1" />
+    <End Role="SendReceiveRequest" Type="Self.SendReceiveRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SendReceiveRequest">
+        <PropertyRef Name="sentFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersAddress_UsersInfo">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="0..1" />
+    <End Role="UsersAddress" Type="Self.UsersAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UsersAddress">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddNewUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="firstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <Parameter Name="addressLine" Type="nvarchar" Mode="In" />
+    <Parameter Name="city" Type="nvarchar" Mode="In" />
+    <Parameter Name="state" Type="nvarchar" Mode="In" />
+    <Parameter Name="country" Type="nvarchar" Mode="In" />
+    <Parameter Name="zipcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="lat" Type="nvarchar" Mode="In" />
+    <Parameter Name="lon" Type="nvarchar" Mode="In" />
+    <Parameter Name="result" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="GroSHDBModelStoreContainer">
+    <EntitySet Name="GrocsharyItem" EntityType="Self.GrocsharyItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SendReceiveRequest" EntityType="Self.SendReceiveRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersAddress" EntityType="Self.UsersAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Grocshary__user___36B12243" Association="Self.FK__Grocshary__user___36B12243">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="GrocsharyItem" EntitySet="GrocsharyItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SendRecei__sentF__5EBF139D" Association="Self.FK__SendRecei__sentF__5EBF139D">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="SendReceiveRequest" EntitySet="SendReceiveRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SendRecei__sentF__656C112C" Association="Self.FK__SendRecei__sentF__656C112C">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="SendReceiveRequest" EntitySet="SendReceiveRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersAddress_UsersInfo" Association="Self.FK_UsersAddress_UsersInfo">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="UsersAddress" EntitySet="UsersAddress" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

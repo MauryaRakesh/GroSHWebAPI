@@ -73,7 +73,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SendRecei__sentF__3B75D760">
+        <Association Name="FK__SendRecei__sentF__5EBF139D">
+          <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="0..1" />
+          <End Role="SendReceiveRequest" Type="Self.SendReceiveRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersInfo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SendReceiveRequest">
+              <PropertyRef Name="sentFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SendRecei__sentF__656C112C">
           <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="0..1" />
           <End Role="SendReceiveRequest" Type="Self.SendReceiveRequest" Multiplicity="*" />
           <ReferentialConstraint>
@@ -121,7 +133,11 @@
             <End Role="UsersInfo" EntitySet="UsersInfo" />
             <End Role="GrocsharyItem" EntitySet="GrocsharyItem" />
           </AssociationSet>
-          <AssociationSet Name="FK__SendRecei__sentF__3B75D760" Association="Self.FK__SendRecei__sentF__3B75D760">
+          <AssociationSet Name="FK__SendRecei__sentF__5EBF139D" Association="Self.FK__SendRecei__sentF__5EBF139D">
+            <End Role="UsersInfo" EntitySet="UsersInfo" />
+            <End Role="SendReceiveRequest" EntitySet="SendReceiveRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SendRecei__sentF__656C112C" Association="Self.FK__SendRecei__sentF__656C112C">
             <End Role="UsersInfo" EntitySet="UsersInfo" />
             <End Role="SendReceiveRequest" EntitySet="SendReceiveRequest" />
           </AssociationSet>

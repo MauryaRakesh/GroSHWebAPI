@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6LtfTl235ka6dEizZWCFlgAAAAACAAAAAAAQZgAAAAEAACAAAAANhve0H6Kru1ZCDtOAcpmCB/T7UeNmtxWqbUUmK8t/ewAAAAAOgAAAAAIAACAAAACKZTpIsiRiZaPRzGMcTOEi3kTnb4tN07EZN7KsMQwkY4AAAADa3Z9d+pX3R1Kh+xOWjZnIj6A5pxHsyct9wdGuduiHR+It75J1QVa91BhgnRw3e3GP8eZFmoIbXty2vc/wOAzS5NCrBoA9qIl0JlOXmw9yEFf5ylpBk9BboJNGDcHiB/z6c5PdOFGq+aQlhX7gWJgm7i3w29+nqig+OezeFw0A00AAAAAOUs47Lku0+yqGn9xMIYozjrDxeR4ukjQDpBRtVpiWqJY2WxHC99TE+xmTXHHd8LtoxEPYgIceu8wIgddSoyjX</EncryptedPassword>
+    <_PublishTargetUrl>ftp://waws-prod-dm1-141.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="apiapp.json">
+      <publishTime>04/07/2020 02:27:43</publishTime>
+    </File>
+    <File Include="ApplicationInsights.config">
+      <publishTime>03/28/2020 15:54:40</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>03/28/2020 15:54:40</publishTime>
+    </File>
+    <File Include="bin/BusinessLayer.dll">
+      <publishTime>04/07/2020 03:05:55</publishTime>
+    </File>
+    <File Include="bin/DataAccessLayer.dll">
+      <publishTime>04/07/2020 03:05:54</publishTime>
+    </File>
+    <File Include="bin/DTO.dll">
+      <publishTime>04/07/2020 03:05:50</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/04/2015 06:13:42</publishTime>
+    </File>
+    <File Include="bin/GroSHAPI.dll">
+      <publishTime>04/07/2020 03:32:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>11/30/2016 16:07:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/07/2016 11:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/06/2016 15:15:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/07/2016 11:49:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/06/2016 15:09:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>11/25/2019 10:57:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>11/25/2019 10:57:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Azure.AppService.ApiApps.Service.dll">
+      <publishTime>03/18/2015 17:02:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 14:36:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>11/12/2019 18:48:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>11/12/2019 18:46:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>11/12/2019 18:47:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/13/2015 13:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>11/12/2019 18:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>11/12/2019 18:45:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/26/2012 00:18:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/20/2017 20:03:18</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/13/2012 12:19:34</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/19/2015 08:49:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/19/2015 08:49:46</publishTime>
+    </File>
+    <File Include="bin/SimpleInjector.dll">
+      <publishTime>03/06/2020 15:09:14</publishTime>
+    </File>
+    <File Include="bin/SimpleInjector.Integration.WebApi.dll">
+      <publishTime>03/06/2020 15:09:16</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>09/11/2014 13:32:14</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>09/18/2018 19:38:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>11/28/2018 12:58:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>11/28/2018 13:01:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/28/2018 13:01:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/28/2015 16:33:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/28/2018 12:59:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/28/2018 13:00:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.dll">
+      <publishTime>06/20/2019 20:37:54</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.dll">
+      <publishTime>06/20/2019 20:38:00</publishTime>
+    </File>
+    <File Include="bin/Unity.Mvc5.dll">
+      <publishTime>07/05/2019 11:26:34</publishTime>
+    </File>
+    <File Include="bin/Utility.dll">
+      <publishTime>04/07/2020 03:05:49</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/28/2020 15:53:52</publishTime>
+    </File>
+    <File Include="Metadata/deploymentTemplates/apiappconfig.azureresource.json">
+      <publishTime>04/07/2020 02:27:42</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/07/2020 02:27:38</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/07/2020 03:34:19</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

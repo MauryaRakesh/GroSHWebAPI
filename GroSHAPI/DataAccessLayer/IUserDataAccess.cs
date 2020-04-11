@@ -11,5 +11,7 @@ namespace DataAccessLayer
 	{
 		UserInfo ValidateUser(string userName, string Password);
 		int UserRegistration(UserDetails userDetail);
+		int SendEmail(string email);
+		int ResetPassword(string email, string newPassword);
 	}
 }

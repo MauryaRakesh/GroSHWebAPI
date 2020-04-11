@@ -1,0 +1,5 @@
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DTO\bin\Release\DTO.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DTO\bin\Release\DTO.pdb
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DTO\obj\Release\DTO.csprojResolveAssemblyReference.cache
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DTO\obj\Release\DTO.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\DTO\obj\Release\DTO.pdb

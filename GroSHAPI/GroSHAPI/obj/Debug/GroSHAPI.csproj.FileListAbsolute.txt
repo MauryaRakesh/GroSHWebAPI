@@ -93,3 +93,6 @@ C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\GroSHAPI\bin\EntityFramework.xml
 C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\GroSHAPI\obj\Debug\GroSHAPI.csprojResolveAssemblyReference.cache
 C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\GroSHAPI\obj\Debug\GroSHAPI.dll
 C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\GroSHAPI\obj\Debug\GroSHAPI.pdb
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\GroSHAPI\bin\Microsoft.Azure.AppService.ApiApps.Service.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\GroSHAPI\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\rakesh\GitHub\GroSHWebAPI\GroSHAPI\GroSHAPI\bin\System.IdentityModel.Tokens.Jwt.xml

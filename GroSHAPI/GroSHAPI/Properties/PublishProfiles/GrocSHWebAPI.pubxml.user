@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6LtfTl235ka6dEizZWCFlgAAAAACAAAAAAAQZgAAAAEAACAAAACloiHKLra4G1qqV90smFyLksxJkpe+t+guIiYEaNmergAAAAAOgAAAAAIAACAAAAAwoJVJVWZ+IGxbR5G8iD+IkVt0TPSTjdgHhSLWguV6IoAAAAAnoP6XGc07HFojAxxfh70hJbBl+EU1Q28VwF3+xoguTvQyFAbIU7RE4tFKtl67h+KG4IrXDr30hiPcTIZyXqo8xg43W+aVITZ5rKPFQ6QkJPN8GY5TPWzoUrto7PF448Pu5Sx3Zw9ry/9M1TB1ho+/OEkAYupLA95Uc9l55rsovEAAAAB3mWSU0j+6mkjZHSiQip+EHuwbF0Ariz67lTFeluorwKo6VThMQXbEiqf08zspC4C+H1JLv/YDC6h1jQV8rCvG</EncryptedPassword>
+    <_PublishTargetUrl>ftps://waws-prod-dm1-141.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

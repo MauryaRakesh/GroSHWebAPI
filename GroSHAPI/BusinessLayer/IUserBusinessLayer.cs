@@ -10,5 +10,7 @@ namespace BusinessLayer
 	public interface IUserBusinessLayer
 	{
 		int UserRegistration(UserDetails userDetail);
+		int SendEmail(string email);
+		int ResetPassword(string email, string newPassword);
 	}
 }

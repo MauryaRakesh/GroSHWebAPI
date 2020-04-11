@@ -71,38 +71,97 @@ namespace DataAccessLayer
 				Console.WriteLine(ex.StackTrace);
 			}
 			return flag;
-			//	using (GroSHDBEntities db = new GroSHDBEntities())
-			//	{
-			//		db.UsersInfoes.Add(new UsersInfo()
-			//		{
-			//			first_Name = userDetail.FirstName,
-			//			last_Name = userDetail.LastName,
-			//			email = userDetail.Email,
-			//			phone = userDetail.Phone,
-			//			password = userDetail.Password,
-			//			createdDate = DateTime.Now.ToUniversalTime()
-			//		});
-			//		flag = db.SaveChanges();
-			//		if (flag == 1)
-			//		{
-			//			var user = db.UsersInfoes.FirstOrDefault(m => (m.email == userDetail.Email) && (m.phone == userDetail.Phone));
-			//			if (user != null)
-			//			{
-			//				db.UsersAddresses.Add(new UsersAddress()
-			//				{
-			//					addressLine = userDetail.AddressLine,
-			//					city = userDetail.City,
-			//					state = userDetail.State,
-			//					country = userDetail.Country,
-			//					userid =user.id
-			//					//createdDate=DateTime.Now.ToUniversalTime()
-			//				});
-			//				db.SaveChanges();
-			//			}
-			//		}
-			//	}
-			//	return flag;
+			
 		}
 
+		/// <summary>
+		/// Send Email interface implementations
+		/// </summary>
+		/// <param name="email"></param>
+		/// <returns></returns>
+		public int SendEmail(string email)
+		{
+			int flag = 0;
+			try
+			{
+				using (GroSHDBEntities db = new GroSHDBEntities())
+				{
+					var user = db.UsersInfoes.FirstOrDefault(m => (m.email == email));
+					if (user != null)
+					{
+						flag = 1;
+					}
+					else
+					{
+						flag = 2;
+					}					
+				}
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex.StackTrace);
+			}
+			return flag;
+		}
+
+		/// <summary>
+		/// Reset pasword interface implementation
+		/// </summary>
+		/// <param name="email"></param>
+		/// <param name="newPassword"></param>
+		/// <returns></returns>
+		public int ResetPassword(string email, string newPassword)
+		{
+			int flag = 0;
+			try
+			{
+				string pass = Helpers.Util.Encrypt(newPassword);
+				using (GroSHDBEntities db = new GroSHDBEntities())
+				{
+					UsersInfo c = (from x in db.UsersInfoes
+									   where x.email == email
+									   select x).First();
+					c.password = pass;					
+					flag = db.SaveChanges();
+				}
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex.StackTrace);
+			}
+			return flag;
+		}
+
+		//	using (GroSHDBEntities db = new GroSHDBEntities())
+		//	{
+		//		db.UsersInfoes.Add(new UsersInfo()
+		//		{
+		//			first_Name = userDetail.FirstName,
+		//			last_Name = userDetail.LastName,
+		//			email = userDetail.Email,
+		//			phone = userDetail.Phone,
+		//			password = userDetail.Password,
+		//			createdDate = DateTime.Now.ToUniversalTime()
+		//		});
+		//		flag = db.SaveChanges();
+		//		if (flag == 1)
+		//		{
+		//			var user = db.UsersInfoes.FirstOrDefault(m => (m.email == userDetail.Email) && (m.phone == userDetail.Phone));
+		//			if (user != null)
+		//			{
+		//				db.UsersAddresses.Add(new UsersAddress()
+		//				{
+		//					addressLine = userDetail.AddressLine,
+		//					city = userDetail.City,
+		//					state = userDetail.State,
+		//					country = userDetail.Country,
+		//					userid =user.id
+		//					//createdDate=DateTime.Now.ToUniversalTime()
+		//				});
+		//				db.SaveChanges();
+		//			}
+		//		}
+		//	}
+		//	return flag;
 	}
 }

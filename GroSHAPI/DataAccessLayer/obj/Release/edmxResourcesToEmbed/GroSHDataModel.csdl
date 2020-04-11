@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GroSHDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GroSHDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GrocsharyItems" EntityType="GroSHDBModel.GrocsharyItem" />
+    <EntitySet Name="SendReceiveRequests" EntityType="GroSHDBModel.SendReceiveRequest" />
+    <EntitySet Name="UsersAddresses" EntityType="GroSHDBModel.UsersAddress" />
+    <EntitySet Name="UsersInfoes" EntityType="GroSHDBModel.UsersInfo" />
+    <AssociationSet Name="FK__Grocshary__user___36B12243" Association="GroSHDBModel.FK__Grocshary__user___36B12243">
+      <End Role="UsersInfo" EntitySet="UsersInfoes" />
+      <End Role="GrocsharyItem" EntitySet="GrocsharyItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SendRecei__sentF__3B75D760" Association="GroSHDBModel.FK__SendRecei__sentF__3B75D760">
+      <End Role="UsersInfo" EntitySet="UsersInfoes" />
+      <End Role="SendReceiveRequest" EntitySet="SendReceiveRequests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersAddress_UsersInfo" Association="GroSHDBModel.FK_UsersAddress_UsersInfo">
+      <End Role="UsersInfo" EntitySet="UsersInfoes" />
+      <End Role="UsersAddress" EntitySet="UsersAddresses" />
+    </AssociationSet>
+    <FunctionImport Name="AddNewUser" ReturnType="Collection(Int32)">
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="phone" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="addressLine" Mode="In" Type="String" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="String" />
+      <Parameter Name="country" Mode="In" Type="String" />
+      <Parameter Name="zipcode" Mode="In" Type="String" />
+      <Parameter Name="lat" Mode="In" Type="String" />
+      <Parameter Name="lon" Mode="In" Type="String" />
+      <Parameter Name="result" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="GrocsharyItem">
+    <Key>
+      <PropertyRef Name="itemId" />
+    </Key>
+    <Property Name="itemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="itemDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="exchangeItem" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="imageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UsersInfo" Relationship="GroSHDBModel.FK__Grocshary__user___36B12243" FromRole="GrocsharyItem" ToRole="UsersInfo" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SendReceiveRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sentFrom" Type="Int32" />
+    <Property Name="senTo" Type="Int32" />
+    <Property Name="status" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="sentDate" Type="DateTime" Precision="3" />
+    <Property Name="receivedDate" Type="DateTime" Precision="3" />
+    <Property Name="acceptedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UsersInfo" Relationship="GroSHDBModel.FK__SendRecei__sentF__3B75D760" FromRole="SendReceiveRequest" ToRole="UsersInfo" />
+  </EntityType>
+  <EntityType Name="UsersAddress">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="addressLine" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="long" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UsersInfo" Relationship="GroSHDBModel.FK_UsersAddress_UsersInfo" FromRole="UsersAddress" ToRole="UsersInfo" />
+  </EntityType>
+  <EntityType Name="UsersInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="last_Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="GrocsharyItems" Relationship="GroSHDBModel.FK__Grocshary__user___36B12243" FromRole="UsersInfo" ToRole="GrocsharyItem" />
+    <NavigationProperty Name="SendReceiveRequests" Relationship="GroSHDBModel.FK__SendRecei__sentF__3B75D760" FromRole="UsersInfo" ToRole="SendReceiveRequest" />
+    <NavigationProperty Name="UsersAddresses" Relationship="GroSHDBModel.FK_UsersAddress_UsersInfo" FromRole="UsersInfo" ToRole="UsersAddress" />
+  </EntityType>
+  <Association Name="FK__Grocshary__user___36B12243">
+    <End Type="GroSHDBModel.UsersInfo" Role="UsersInfo" Multiplicity="0..1" />
+    <End Type="GroSHDBModel.GrocsharyItem" Role="GrocsharyItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GrocsharyItem">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SendRecei__sentF__3B75D760">
+    <End Type="GroSHDBModel.UsersInfo" Role="UsersInfo" Multiplicity="0..1" />
+    <End Type="GroSHDBModel.SendReceiveRequest" Role="SendReceiveRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SendReceiveRequest">
+        <PropertyRef Name="sentFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersAddress_UsersInfo">
+    <End Type="GroSHDBModel.UsersInfo" Role="UsersInfo" Multiplicity="0..1" />
+    <End Type="GroSHDBModel.UsersAddress" Role="UsersAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UsersAddress">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
